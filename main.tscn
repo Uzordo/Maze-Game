@@ -88,5 +88,7 @@ position = Vector2(1184, 96)
 
 [node name="Camera2D" type="Camera2D" parent="Test/Player"]
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
 
 [node name="GUI" parent="." instance=ExtResource("3_odkih")]
