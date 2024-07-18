@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpx3cjo1vtk13"]
+
+[ext_resource type="Script" path="res://scenes/GUI/game_victory.gd" id="1_pyroy"]
+[ext_resource type="Texture2D" uid="uid://ctpbe1gytnskc" path="res://sprites/menu_buttons/menu_button.png" id="2_3i2s1"]
+[ext_resource type="Texture2D" uid="uid://eiaup3dktuhm" path="res://sprites/menu_buttons/menu_button_pressed.png" id="3_4ffrv"]
+[ext_resource type="Texture2D" uid="uid://l4yenva1p1gt" path="res://sprites/menu_buttons/menu_button_hover.png" id="4_7i7ln"]
+[ext_resource type="Texture2D" uid="uid://c7vqc66gux3o4" path="res://sprites/menu_buttons/quit_button.png" id="5_1p7ar"]
+[ext_resource type="Texture2D" uid="uid://gn2bxcakydb" path="res://sprites/menu_buttons/quit_button_pressed.png" id="6_rs6i3"]
+[ext_resource type="Texture2D" uid="uid://b8kj33ihinthv" path="res://sprites/menu_buttons/quit_button_hover.png" id="7_3la2i"]
+
+[sub_resource type="SystemFont" id="SystemFont_ngil3"]
+font_names = PackedStringArray("Times New Roman")
+
+[sub_resource type="SystemFont" id="SystemFont_t6c2s"]
+font_names = PackedStringArray("Times New Roman")
+
+[node name="GameVictory" type="CanvasLayer"]
+script = ExtResource("1_pyroy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.0392157, 0.109804, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.896
+anchor_top = 0.965
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.808
+offset_top = -0.320007
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_ngil3")
+text = "Version 0.2 DEV"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="separator" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_t6c2s")
+theme_override_font_sizes/font_size = 64
+text = "Thank you for playing!"
+horizontal_alignment = 1
+
+[node name="separator2" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator3" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator4" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="tries_label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_t6c2s")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="MenuButton" type="TextureButton" parent="Control/MarginContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_3i2s1")
+texture_pressed = ExtResource("3_4ffrv")
+texture_hover = ExtResource("4_7i7ln")
+
+[node name="QuitButton" type="TextureButton" parent="Control/MarginContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_1p7ar")
+texture_pressed = ExtResource("6_rs6i3")
+texture_hover = ExtResource("7_3la2i")

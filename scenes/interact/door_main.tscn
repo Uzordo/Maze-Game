@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://duduecscpwh71"]
+
+[ext_resource type="Script" path="res://scenes/interact/door_main.gd" id="1_xl1ya"]
+[ext_resource type="Texture2D" uid="uid://bbhkh0ly12rvo" path="res://sprites/interactables/door.png" id="2_xv5tk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4r40"]
+size = Vector2(64, 64)
+
+[node name="Door_Main" type="StaticBody2D"]
+script = ExtResource("1_xl1ya")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xv5tk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-32, 64, 32, 64, 32, 32, 64, 32, 64, -32, 32, -32, 32, -64, -32, -64, -32, -32, -64, -32, -64, 32, -32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o4r40")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

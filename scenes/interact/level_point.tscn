@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7ln3wctawgdg"]
+
+[ext_resource type="Script" path="res://scenes/interact/level_point.gd" id="1_0jkox"]
+[ext_resource type="Texture2D" uid="uid://b727w62vijc7b" path="res://sprites/interactables/level_point.png" id="1_5cfae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6eh3"]
+size = Vector2(32, 32)
+
+[node name="LevelPoint" type="Area2D"]
+script = ExtResource("1_0jkox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5cfae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m6eh3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

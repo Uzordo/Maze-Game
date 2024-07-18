@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfpalq5w817ro"]
+
+[ext_resource type="Texture2D" uid="uid://bpy84bk08atex" path="res://sprites/interactables/change_level.png" id="1_0wd3k"]
+[ext_resource type="Script" path="res://scenes/interact/change_level.gd" id="1_j8a0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5nrr"]
+size = Vector2(64, 64)
+
+[node name="change_level" type="Area2D"]
+script = ExtResource("1_j8a0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0wd3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j5nrr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

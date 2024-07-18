@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bls0cnktoq2nl"]
+
+[ext_resource type="Script" path="res://scenes/obstacles/obstacle_moving_template.gd" id="1_w30hj"]
+
+[sub_resource type="Animation" id="Animation_h8ykh"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfl47"]
+_data = {
+"move": SubResource("Animation_h8ykh")
+}
+
+[node name="obstacle_moving_template" type="Path2D"]
+script = ExtResource("1_w30hj")
+speed = 50
+
+[node name="AnimatableBody2D" type="Area2D" parent="."]
+position = Vector2(-1.98975, -3.79602)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-1.98975, -3.79602)
+rotation = 3.14159
+progress = 312.0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mfl47")
+}
+autoplay = "move"
+
+[connection signal="body_entered" from="AnimatableBody2D" to="." method="_on_animatable_body_2d_body_entered"]

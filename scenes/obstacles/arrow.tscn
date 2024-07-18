@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqxpvkby4ye16"]
+
+[ext_resource type="Texture2D" uid="uid://b2jsvoosovuod" path="res://sprites/obstacles/arrow.png" id="1_o4dc2"]
+[ext_resource type="Script" path="res://scenes/obstacles/arrow.gd" id="1_s07d6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plh6q"]
+size = Vector2(6, 16)
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_s07d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o4dc2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_plh6q")
+
+[node name="self_destruct" type="Timer" parent="."]

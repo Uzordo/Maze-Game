@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bur24ykxt04xy"]
+
+[ext_resource type="Script" path="res://scenes/GUI/gui.gd" id="1_nfpy5"]
+
+[sub_resource type="SystemFont" id="SystemFont_gjta0"]
+font_names = PackedStringArray("Times New Roman")
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_nfpy5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gjta0")
+theme_override_font_sizes/font_size = 64
+text = "0/0
+"
+horizontal_alignment = 2

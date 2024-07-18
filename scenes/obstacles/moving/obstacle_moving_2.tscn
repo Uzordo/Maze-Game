@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bobidlc6wg0im"]
+
+[ext_resource type="PackedScene" uid="uid://bls0cnktoq2nl" path="res://scenes/obstacles/obstacle_moving_template.tscn" id="1_b4tqy"]
+[ext_resource type="Texture2D" uid="uid://ctgaeh5adq5rw" path="res://sprites/obstacles/long_red_block.png" id="2_v0byd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc8dk"]
+size = Vector2(64, 32)
+
+[node name="moving_obstacle_2" instance=ExtResource("1_b4tqy")]
+
+[node name="AnimatableBody2D" parent="." index="0"]
+position = Vector2(0, 0)
+
+[node name="Sprite2D" parent="AnimatableBody2D" index="0"]
+texture = ExtResource("2_v0byd")
+
+[node name="CollisionShape2D" parent="AnimatableBody2D" index="1"]
+position = Vector2(0.0102485, 0.203981)
+shape = SubResource("RectangleShape2D_oc8dk")
+
+[node name="PathFollow2D" parent="." index="1"]
+position = Vector2(0, 0)
