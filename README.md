@@ -1,6 +1,6 @@
 My first Godot game.
 
-CONTROLS
+# CONTROLS
 
 WASD to move
 ESC to pause
