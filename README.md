@@ -4,3 +4,5 @@ My first Godot game.
 
 WASD to move
 ESC to pause
+
+[download](https://github.com/Uzordo/Maze-Game/releases/tag/games)
