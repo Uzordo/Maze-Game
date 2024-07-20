@@ -38,7 +38,7 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = SubResource("SystemFont_ngil3")
-text = "Version 0.2 DEV"
+text = "Version 0.3 DEV"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
